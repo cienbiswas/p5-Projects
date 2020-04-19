@@ -1,0 +1,189 @@
+/** General settings */
+span{
+      display: block;
+    }
+
+#pause{
+    background-color: #ffffffb6;
+    padding: 0px 190px;
+    position: absolute;
+    margin: 225px 0px;
+    font-size: 100px;
+    display: none;
+}
+
+/**
+ -------------------------- Buttons
+*/
+    #buttons{
+        position: absolute;
+        margin: 200px 800px;
+        padding: 10px 25px;
+        border: 2px solid #a1a1a1;
+        border-radius: 10px;
+    }
+    button{
+        background-color: #e1e1e1;
+        border: none;
+        border-radius: 7px;
+        padding: 3px 10px;
+        margin: 10px 0px;
+        font-size: 14px;
+        transition: 0.2s ease-out;
+    }
+
+    button:hover{
+      border: 2px solid #000000;
+      font-size: 16px;
+      padding: 5px 16px;
+      transition: 0.2s ease-out;
+      cursor: pointer;
+  }
+
+    #easyB:hover    {background-color: #00FF00;}
+    #mediumB:hover  {background-color: #FFFF00;}
+    #hardB:hover    {background-color: #FF0000;}
+    #extremeB:hover {background-color: #000000; color: #FFF;}
+
+
+/**
+-------------------------- Scores
+*/
+    #score{
+        position: absolute;
+        margin: 230px 675px;
+        font-size: 100px;
+    }
+
+    #highScore{
+        position: absolute;
+        font-size: 50px;
+        border: 2px solid #a1a1a1;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin: 130px 1100px;
+    }
+  
+
+    #deathScreen{
+        color: #FF0000;
+        background-color: #ffffff5e;
+        padding: 0px 154px;
+        position: absolute;
+        margin: 150px 0px;
+        font-size: 100px;
+        display: none;
+    }
+
+    #deathScreenScore{
+        color: #FFF;
+        padding: 0px 200px;
+        position: absolute;
+        margin: 400px 0px;
+        font-size: 50px;
+        display: none;
+    }
+
+    #deathScreenHighScore{
+        color: #FFF;
+        padding: 0px 50px;
+        position: absolute;
+        margin: 300px 0px;
+        font-size: 70px;
+        display: none;
+    }
+
+    #continue{
+        color: #FFF;
+        padding: 0px 220px;
+        position: absolute;
+        margin: 550px 0px;
+        font-size: 20px;
+        display: none;
+    }
+
+    #highScoreEasy    {background-color: #00FF00;}
+    #highScoreMedium  {background-color: #FFFF00;}
+    #highScoreHard    {background-color: #FF0000;}
+    #highScoreExtreme {background-color: #000000; color: #FFF;}
+
+
+/**
+-------------------------- Developer Menu
+*/
+  #developerB{
+    position: absolute;
+    margin: 500px 665px;
+    display: none;
+    }
+
+  #developer{
+    font-size: 18px;
+    position: absolute;
+    margin: 700px 100px;
+  }
+
+
+  /**
+  -------------------------- Slider
+  */
+      .switch {
+        margin: -5px 10px;
+          position: absolute;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+        }
+        
+        .switch input { 
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        input:checked + .slider {
+          background-color: #2196F3;
+        }
+        
+        input:focus + .slider {
+          box-shadow: 0 0 1px #2196F3;
+        }
+        
+        input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+        
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+        }
+        
+        .slider.round:before {
+          border-radius: 50%;
+        }

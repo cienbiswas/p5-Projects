@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+    <script src="scripts/sketch.js"></script>
+    <script src="scripts/snake.js"></script>
+    <script src="scripts/food.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="buttons">
+        <button id="easyB" onclick="setDifficulty(1)">Tall</button>
+        <button id="mediumB" onclick="setDifficulty(2)">Grande</button>
+        <button id="hardB" onclick="setDifficulty(3)">Venti</button>
+        <button id="extremeB" onclick="setDifficulty(4)">EXTREME</button>
+    </div>
+
+    <span id="pause">Pause</span>
+    <span id="deathScreen">Wasted</span>
+    <span id="deathScreenScore"></span>
+    <span id="deathScreenHighScore"></span>
+    <span id="highScore">High Score: <span id="highScoreEasy">0</span><span id="highScoreMedium">0</span>
+                                     <span id="highScoreHard">0</span><span id="highScoreExtreme">0</span>       </span>
+    <span id="score">0</span>
+    <span id="continue">Press F to continue</span>
+    
+    <div id="developerMenu">
+        <button id="developerB" onclick="developer()">Click me</button>
+    </div>
+
+    <div id="developer">
+        Developer Mode:
+        <label class="switch">
+            <input type="checkbox" id="developerMode">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</body>
+</html>
