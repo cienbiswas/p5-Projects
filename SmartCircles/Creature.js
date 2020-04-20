@@ -27,12 +27,17 @@ class Creature{
     }
   
     update(){
-      this.pos.add(this.vel);
+      
+      if(frameCount < this.DNA.length)
+        this.acc = this.DNA[frameCount];
+      else{
+        //this.acc = createVector(random(-0.00075, 0.00075), random(-0.00075, 0.00075));
+        //this.acc = createVector(random(2), random(-2, 2));
+        this.acc = p5.Vector.fromAngle(Math.random(1) * Math.PI * 2);
+        this.DNA.push(this.acc);
+      }
       this.vel.add(this.acc);
-    }
-  
-    applyForce(force){
-      this.acc.add(force);
+      this.pos.add(this.vel);
     }
   
     addDNA(vector){
@@ -44,12 +49,13 @@ class Creature{
       let fit = map(d, 33, mainWidth, 1, 0);   //parameters explained: 1. variable d should get mapped, 2. lowest dist possible = 1, 3. highest dist possible = mainWidth,
                                         //4. if(low dist) --> high fitness, 5. if(high dist) --> low fitness
       this.fitness = fit * (100 / d);
+      this.fitness *= this.fitness;
     }
   
     mutate(){
       let r = random(1);
       //mutation rate 4%
-      if(r < 0.04){
+      if(r < 0.00){
         let a = floor(random(this.DNA.length-1));
         this.DNA[a] = createVector(random(-0.002, 0.002), random(-0.002, 0.002));
       }
@@ -64,6 +70,8 @@ class Creature{
         else
           newDNA[i] = partner.DNA[i];
       }
-      return new Creature(newDNA);
+      const newCreature = new Creature(newDNA);
+      newCreature.mutate();
+      return newCreature;
     }
   }

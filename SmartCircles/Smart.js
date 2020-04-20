@@ -25,7 +25,7 @@ function setup(){
 
     frameRate(500);
 
-    time = 200; //  15 == 1sek
+    time = 120; //  15 == 1sek
     tick = time;
   
   /**   Initialization   */
@@ -73,14 +73,10 @@ function draw(){
   /**     Display            */
     /*  Creatures     */
       for(let i = 0; i < creatures.length; i++){
-        let wind = createVector(random(-0.00075, 0.00075), random(-0.00075, 0.00075));
-        creatures[i].addDNA(wind);
-        creatures[i].mutate();
-        creatures[i].applyForce(wind);
-        creatures[i].calcFitness();
 
         creatures[i].display(255);
-        creatures[i].update()
+        creatures[i].update();
+        creatures[i].calcFitness();
 
         if(isFinished(creatures[i]))
           creatures.splice(i, 1);
@@ -227,9 +223,15 @@ function PoolOfCreatures(){
  * @returns the child (creature) with the mixed DNA of the parents
  */
 function selection(){
-  let parentA = random(creaturePool);
-  let parentB = random(creaturePool);
-  let child = parentA.crossover(parentB);
+  let parentA = creaturePool[0];
+  let parentB = creaturePool[0];
+  let child;
+
+  if(parentA.DNA.length < parentB.DNA.length)
+    child = parentA.crossover(parentB);
+  else
+    child = parentB.crossover(parentA);
+
   return child;
 }
 
